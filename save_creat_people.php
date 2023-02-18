@@ -14,4 +14,11 @@
     $email=$_POST["email"];
     mysqli_query($conn, "INSERT INTO databank (id_card,titlename,fullname,phone,email,birthday,age,account_name,mmoney,aaddress,ppassword)
     VALUES('$id_card','$titlename','$fullname','$phone','$email','$birthday','$age','$account_name','$mmoney','$aaddress','$ppassword')");
+    if (mysqli_affected_row($conn) > 0){
+        echo '<p>Account Created</p>';
+        echo '<a href= "index.html">Back to login</a';
+    }else{
+        echo 'Account not Created';
+        echo mysqli_error($conn);
+    }
 ?>
