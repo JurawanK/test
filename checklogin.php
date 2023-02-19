@@ -5,10 +5,10 @@
     <?php
     require("connect.php");
     $account_name=$_POST["account_name"];
-    $password=$_POST["password"];
+    $ppassword=$_POST["ppassword"];
     $account_id="";
     //echo $account_name.$password;
-    $sql = "SELECT * FROM databank WHERE password='$password' AND account_name='$account_name'";
+    $sql = "SELECT * FROM databank WHERE password='$ppassword' AND account_name='$account_name'";
     $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
